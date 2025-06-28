@@ -1,52 +1,29 @@
 from transformers import AutoTokenizer, AutoModelForSeq2SeqLM
+import time
+import torch
 
-# Load tokenizer and model
-# tokenizer = AutoTokenizer.from_pretrained("google/flan-t5-base")
-# model = AutoModelForSeq2SeqLM.from_pretrained("google/flan-t5-base")
+def load_model_and_tokenizer(path: str = None, model_name: str = "google/flan-t5-base"):
+    path = path or model_name
+    tokenizer = AutoTokenizer.from_pretrained(path)
+    model = AutoModelForSeq2SeqLM.from_pretrained(path)
+    return tokenizer, model
 
-model = AutoModelForSeq2SeqLM.from_pretrained("models")
-tokenizer = AutoTokenizer.from_pretrained("models")
+def classify_sentiment(prompt: str, tokenizer, model, max_tokens: int = 20):
+    inputs = tokenizer(prompt, return_tensors="pt")
+    with torch.no_grad():
+        outputs = model.generate(**inputs, max_new_tokens=max_tokens)
+    return tokenizer.decode(outputs[0], skip_special_tokens=True)
 
-# Define prompt
-# prompt = "Classify sentiment: this model is amazingly bad"
+def main():
+    start_time = time.time()
 
-# # Tokenize input
-# inputs = tokenizer(prompt, return_tensors="pt")
+    tokenizer, model = load_model_and_tokenizer(path="models")
 
-# # Generate output
-# outputs = model.generate(**inputs, max_new_tokens=20)
+    prompt = "Classify sentiment: this model is amazingly bad"
+    result = classify_sentiment(prompt, tokenizer, model)
 
-# # Decode and print
-# print(tokenizer.decode(outputs[0], skip_special_tokens=True))
+    print("Output:", result)
+    print("Elapsed time: {:.2f}s".format(time.time() - start_time))
 
-# model.save_pretrained("models")
-# tokenizer.save_pretrained("models")
-
-import snscrape.modules.twitter as sntwitter
-# from transformers import T5Tokenizer, T5ForConditionalGeneration
-from datetime import date
-# import torch
-
-# Parameters
-username = "elonmusk"  # Replace with target username
-today = date.today().isoformat()
-
-# Load model
-# model_path = "flan-t5-base-classifier"  # Path to your fine-tuned model
-# tokenizer = T5Tokenizer.from_pretrained(model_path)
-# model = T5ForConditionalGeneration.from_pretrained(model_path)
-
-# Scrape tweets from today
-tweets = []
-for tweet in sntwitter.TwitterUserScraper(username).get_items():
-    if tweet.date.date().isoformat() != today:
-        break
-    tweets.append(tweet.content)
-
-# Classify tweets
-for text in tweets:
-    input_text = f"classify: {text}"
-    inputs = tokenizer(input_text, return_tensors="pt", truncation=True)
-    output_ids = model.generate(**inputs)
-    label = tokenizer.decode(output_ids[0], skip_special_tokens=True)
-    print(f"TWEET: {text}\nLABEL: {label}\n{'-'*80}")
+if __name__ == "__main__":
+    main()
