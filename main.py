@@ -32,6 +32,5 @@ def main():
         stats = compute_chunk_stats(chunks)
         plot_stats(stats)
 
-
 if __name__ == "__main__":
     main()
