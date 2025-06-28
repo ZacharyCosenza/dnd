@@ -1,1 +1,55 @@
+# Customized things to ignore
 model.safetensors
+
+# Byte-compiled / cache files
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Virtual environments
+.env/
+.venv/
+env/
+venv/
+ENV/
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# PyTorch / TensorFlow / model files
+*.pt
+*.pth
+*.h5
+
+# Data files
+*.csv
+*.tsv
+*.log
+*.sqlite3
+*.db
+
+# OS-specific
+.DS_Store
+Thumbs.db
+
+# VSCode settings
+.vscode/
+*.code-workspace
+
+# Build artifacts
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# Test / coverage output
+.coverage
+htmlcov/
+.tox/
+.cache/
+.pytest_cache/
+
+# Secrets (make sure you’re not tracking this!)
+*.env
+*.key
+*.pem

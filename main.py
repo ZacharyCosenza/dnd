@@ -1,28 +1,26 @@
-from transformers import AutoTokenizer, AutoModelForSeq2SeqLM
 import time
-import torch
-
-def load_model_and_tokenizer(path: str = None, model_name: str = "google/flan-t5-base"):
-    path = path or model_name
-    tokenizer = AutoTokenizer.from_pretrained(path)
-    model = AutoModelForSeq2SeqLM.from_pretrained(path)
-    return tokenizer, model
-
-def classify_sentiment(prompt: str, tokenizer, model, max_tokens: int = 20):
-    inputs = tokenizer(prompt, return_tensors="pt")
-    with torch.no_grad():
-        outputs = model.generate(**inputs, max_new_tokens=max_tokens)
-    return tokenizer.decode(outputs[0], skip_special_tokens=True)
+from core import SentimentClassifier, DNDDataset
 
 def main():
+
     start_time = time.time()
 
-    tokenizer, model = load_model_and_tokenizer(path="models")
+    path_model = 'models'
+    path_data = 'data/notes.txt'
 
-    prompt = "Classify sentiment: this model is amazingly bad"
-    result = classify_sentiment(prompt, tokenizer, model)
+    # Get the pre-trained model
+    model = SentimentClassifier(path_model)
 
-    print("Output:", result)
+    # Ge the dataset
+    dataset = DNDDataset(path_data)
+
+    query = "Classify sentiment: " + dataset[0]
+
+    # Generate output
+    c = model.classify(query)
+
+    # Decode and print
+    print("Output:", c)
     print("Elapsed time: {:.2f}s".format(time.time() - start_time))
 
 if __name__ == "__main__":
