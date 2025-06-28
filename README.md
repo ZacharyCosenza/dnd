@@ -2,11 +2,11 @@
 
 This is a basic exploration of our multi-year DND campaign. We generate basic statistics over our domain as well as sentiment scores using FLAN-T5 LLM (https://huggingface.co/docs/transformers/en/model_doc/flan-t5), a pre-trained open-source language model.
 
-Here are some descriptive statistics of the notes over time (where time is defined as chunks of 100 characters of text in a set of notes taken by a member of our campaign)
+Here are some descriptive statistics of the notes over time (where time is defined as chunks of 100 characters of text in a set of notes taken by a member of our campaign).
 
 ![Project Diagram](fig1.png)
 
-We take advantage of pre-training of FLAN-T5 to do zero-shot classification of broad sentiment [positive, negative, neutral] of the campaign over time (see below).
+We take advantage of pre-training of FLAN-T5 to do zero-shot classification of broad sentiment [positive, negative, neutral] of the campaign over time (see below). Running averages are calculated using a window of 5 chunks, and every other 5 chunks are used for classification (to reduce computation needs)
 
 `"Classify sentiment [positive, negative, neutral]: "`
 
