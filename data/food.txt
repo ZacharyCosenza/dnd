@@ -1,0 +1,33 @@
+When a character is staying in town and are part of the Ironguards' Guild, they eat Standard Meals.
+
+Meals and their benefit/detriment 
+
+Meal Type	Description/Effect	Requirements	DC to cook (int or wis check)
+Scraps	You eat enough to stave off starvation, but you do not gain the effects of a short rest. Repeated meals require a DC 10 + the number of days you've only eaten Scraps Constitution saving throw or gain a level of exhaustion, up to level 4.	Anything that you could eat.	5
+Trail Rations	Enough to fill your belly and give you strength, but living off them can be strenuous. Every day after the 3rd day of eating only Trail Rations, make a DC 10 + the number of days since you've had a Standard or better meal Wisdom saving throw or have disadvantage on all wisdom checks for 24 hours, if you failed the saving throw the previous day, you also have disadvantage on wisdom saving throws as well.	None	Can't Cook
+Standard Meal	A well balanced meal. No additional effects	
+Meat, vegetables, campfire, (optional) fruit, (optional) mess kit 
+
+10
+Well Made Meal
+A scrumptious meal! You have advantage on rolling hit dice for the next 24 hours.	Meat, vegetables, campfire or kitchen, mess kit, (optional) fruit, (optional) spices
+15
+Tasty Meal	A delicious meal! You gain the same effect as a Well Made Meal as well as regain 1d4 hit die.	Meat, vegetables, campfire or kitchen, cook's utensils, fruit, spices	20
+Gourmet Meal	
+A truly great meal that'll stick with you! You gain the same effect as a Tasty Meal, expect instead of 24 hours, it is for 1 week, as well as one of the following effects:
+
+As an action, you can regain 1 spell slot of the lowest slot you are missing, up to 5th level. This action can be performed once a day but you may also forgo gaining hit points during a short rest and perform this action for free.
+As an action, you can roll any number of hit dice that you have and regain the rolled number of hit points. During a short rest, you can roll up to half your hit dice for free and regain that amount of hit points.
+For every meal after you eat a Gourmet Meal, the length of time you are under the effects of a Gourmet Meal is reduced by one day for a Well Made Meal, two days for a Standard Meal, three days for Trail Rations, and four days for Scraps
+
+Rare meats, vegetables,  kitchen, cook's utensils, fruit, spices, honey, fine drinks
+20
+Specialty Meal 	A very peculiar meal. You gain the same effect as a Well Made Meal, expect instead of 24 hours, it is for 3 days, as well as a resistance to a certain damage type, depending on the ingredients. However, if the dish isn't up to standard, you may also gain a vulnerability to a different damage type as well.	Meat, vegetables, campfire or kitchen, mess kit, spices, special ingredient, (optional) fruit
+20
+
+
+Getting under the listed DC but not below 10 means you created a Standard Meal, rolling 10 or under but not below 5 means you created Scraps, and rolling under 5 means the food is unsalvageable and cannot be eaten. Using optional ingredients may lower the listed DC or give you advantage on the roll, depending on the circumstances.  
+
+Rolling a natural 20 regains 1 hit dice for everyone that part takes in the meal
+
+Meats last 2 days in normal conditions and 5 if salted.

@@ -1,0 +1,43 @@
+This is a handy reference of the new homebrewed rules around combat!
+
+Updates and Changes
+Opportunity Attacks
+Only Barbarians and characters that have the Protection fighting style can normally make Opportunity Attacks
+Opportunity Attacks can be made against creatures when they make an attack against a creature other than you and the creature is within your reach.
+Dodge
+Monks and Rogues that take the Dodge action can make opportunity attacks, which are made at advantage
+Advantage & Disadvantage
+Advantage & Disadvantage now cancel on a 1-1 basis, so where before a character with 3 sources of advantage and 1 source of disadvantage would be rolling straight, they now would be rolling at advantage.
+Sneak Attacks
+At 5th level, when you deal Sneak Attack damage, you can add one of the following Cunning Strike effects. Each effect has a die cost, which is the number of Sneak Attack damage dice you must forego to add the effect. You remove the die before rolling and the effect occurs immediately after the attack's damage is dealt. If a Cunning Strike effect requires a saving throw, the DC equals 8 + your Proficiency Bonus + your Dexterity modifier.
+Deafen (Cost: 1d6). The target must succeed on a Constitution saving throw, or it has the Deafen condition until the end of its next turn.
+Disarm (Cost: 1d6). The target must succeed on a Dexterity saving throw, or it drops one item of your choice that it's holding.
+Poison (Cost: 1d6). You add a toxin to your strike, forcing the target to make a Constitution saving throw. On a failed save, the target has the Poisoned condition for 1 minute. At the end of each of its turns, the Poisoned target can repeat the save, ending the effect on itself on a success. To use this effect, you must have a Poisoner's Kit on your person.
+Trip (Cost: 1d6). If the target is Large or smaller, it must succeed on a Dexterity saving throw or have the Prone condition.
+Withdraw (Cost: 1d6). Immediately after the attack, you move up to half your Speed without provoking Opportunity Attacks.
+Daze (Cost: 2d6, 14th level). The target must succeed on a Constitution saving throw, or it has the Dazed condition until the end of its next turn.
+Knock Out (Cost: 6d6, 14th level). The target must succeed on a Constitution saving throw, or it has the Unconscious condition for 1 minute or until it takes any damage.
+Obscure (Cost: 3d6, 14th level). You strike near the target's eyes. The target must succeed on a Dexterity saving throw, or it has the Blinded condition until the end of its next turn.
+New Actions and Features
+Guard
+A new action that Fighters, Paladins, and Rangers can take, which gives attacks against them disadvantage and can make special reactions until the start of their next turn. The special reaction allows the character to make a number of opportunity attacks equal to the number of attacks they can normally make.
+Stances
+At level 5, Fighters and Monks get access to a new feature called Stances. The different stances they can be in are Offensive, Defensive, and Natural and they can use a bonus action to switch stances, but they cannot go from Offensive to Defensive or vise versa unless they are a Battle Master Fighter or a Way of the Kensei Monk. Stances require concentration to be in and if your concentration is broken, all attacks against you have advantage and you cannot enter a new stance until the end of your next turn. While in a stance, you get access to stance maneuvers based on the stance you are in, which you can use a number of times equal to your proficiency bonus (PB).
+Offensive Stance
+The first attack you take on every turn deals additional damage equal to your PB OR at the start of your turn, you can spend 2 stance maneuvers to deal this additional damage on all attacks this turn
+You have access to the following maneuvers, which cost 1 stance maneuver each:
+Pushing Attack (Strength Save, 8 + PB + Str or Dex Mod)
+Riposte
+Trip Attack (Strength Save, 8 + PB + Str or Dex Mod)
+Your AC is reduced by 2.
+Defensive Stance
+The first attack every turn against you is at disadvantage OR at the start of your turn, you can spend 1 stance maneuver to have all attacks against you have disadvantage until the start of your next turn
+You have access to the following maneuvers, which cost 1 stance maneuver each:
+Disarming Strike (Strength Save, 8 + PB + Str or Dex Mod)
+Distracting Strike
+Parry (Reduce damage by 1d6 + Dex Mod)
+Your movement is halved.
+Neutral Stance
+At the end of your turn, you regain 1 use of a stance maneuver
+You have advantage on skill checks to gain information on other creatures in combat with you 
+You have advantage on Constitution saving throws that you make to maintain your concentration on your stance when you take damage

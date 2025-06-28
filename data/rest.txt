@@ -1,0 +1,26 @@
+These are a handy reference of the (now updated) resting rules.
+
+Long Rest: A Long Rest now doesn't matter whether you are in town or not, but to gain the benefits of a long rest, a character must spend 7 days of only doing light activities and getting their necessary sleep (if they need any at all).
+
+A (non-exhaustive) list of things that do not interrupt a long rest:
+
+Casting Spells
+Leveling Up
+Conducting Business
+Making attacks
+A (non-exhaustive) list of things that do interrupt a long rest:
+
+Taking more than 6 points of damage
+Being in a fight that lasts more than a minute or being in more than three fights in a day
+Walking/Swimming/Climbing/Flying in the wilderness for more than 3 hours a day
+Short Rest: A Short Rest now does not require a Healer's Kit to gain its benefits, but now takes 8 hours of rest, only doing light activities. You do not need to sleep for a short rest, so if you want to take 8 hours to rest during the day, that is fine.
+
+Respite: A Respite is a new, even shorter rest, that can only be taken directly after an event that has caused a character harm has occurred (such as a fight, a trap going off, environmental hazards, ect). Characters that have been injured can spend 10 minutes and one use of a Healer's Kit to recover slightly, in one of the following ways:
+
+Spend up to 3 hit die and heal that amount + the characters constitution modifier times the number of hit dice used. If you role the max number on any of your hit die, you may roll again for free. If you would gain more hit points than you could heal, you may take them as temp hit points.
+Spend up to 3 hit die and roll 1d6 per hit die used. For each d6 rolled, split the number rolled into two component parts that adds up to the original. One of the numbers can be used to regain spell slots and the other for regains hit points and you must regain at least 1 hit point per d6 rolled. For example, if you rolled a 5, you could regain a 3rd level spell slot and 2 hit points.
+For Warlocks, if they are rolling more than 1d6, they may add up the results of their d6s before splitting the number up. For example, if you rolled 2d6 and got a 3 and a 4, you can add them to 7 and choose to gain a 5th level spell slot and 2 hit points.
+Spend up to 3 hit die and roll 2d4 per hit die used. You roll the d4s in sets of two and you regain the following based on your results:
+If the numbers are different, take the highest number and regain that number of features that you have that refresh on a short rest and regain the lower number in hit points
+If the numbers are the same, regain that number of features that you have that refresh on a short or long rest and regain that number of hit points.
+On your first Respite of the day, you may elect to not spend any hit die and still choose one of the options, were you would proceed as if you are spending 1 hit die. If you are spending hit die, you still get the free "hit die", so you can only spend up to 2 hit die. Note: D&DBeyond does not currently have a way to update hit dice outside of taking a short rest, so please keep track of how many you have used and update them when you do take a short rest.
