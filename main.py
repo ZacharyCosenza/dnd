@@ -1,9 +1,11 @@
 from core import SentimentClassifier, DNDDataset
+import time
 from viz import compute_chunk_stats, plot_stats
 
 def main():
 
     viz = True
+    time_start = time.time()
 
     path_model = 'models'
     path_data = 'data/notes.txt'
@@ -21,6 +23,7 @@ def main():
 
     # Decode and print
     print("Output:", c)
+    print("Time taken (s): ", time.time() - time_start)
 
     # Visualizations
     if viz:
