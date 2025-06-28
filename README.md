@@ -20,6 +20,10 @@ We can generalize this zero-shot classification at the character-level.
 
 ![Project Diagram](fig3.png)
 
+We can further improve classification by feeding few-shot examples into the prompt. Note below some simple examples of classification broadly agree with the zero-shot analysis.
+
+![Project Diagram](fig4.png)
+
 ---
 
 ## How to Run

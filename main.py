@@ -29,8 +29,13 @@ def main():
     logger.info(f"Loading dataset from: {path_data}")
     dataset = DNDDataset(path_data)
 
+    few_shots = {'positive': "Goratur you did a great job!",
+                 'negative': "Goratur was such a pedo.",
+                 'neural': "John you did a great job!"}
+
     semantics = ["Classify sentiment [positive, negative, neutral]: ",
-                 "Classify sentiment about Goratur [positive, negative, neutral]: "]
+                 "Classify sentiment about Goratur [positive, negative, neutral]: ",
+                 f"Classify sentiment about Goratur using these few-shot examples \n {[v + ': sentiment is ' + k for k, v in few_shots.items()]} [positive, negative, neutral]: "]
 
     results = {}
     for semantic in semantics:
