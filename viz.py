@@ -120,14 +120,13 @@ import numpy as np
 import matplotlib.pyplot as plt
 from datetime import datetime
 
-def plot_sentiment(sentiments):
+def plot_sentiment(sentiments, semantic, semantic_number):
 
     # Map sentiment to numeric values
     mapping = {'positive': 1, 'negative': -1, 'neutral': 0}
     values = np.array([mapping[s] for s in sentiments])
 
-    # Running average (window size 3)
-    def running_average(arr, w=3):
+    def running_average(arr, w=5):
         return np.convolve(arr, np.ones(w)/w, mode='valid')
 
     avg = running_average(values)
@@ -141,13 +140,13 @@ def plot_sentiment(sentiments):
 
     plt.xlabel('Time')
     plt.ylabel('Sentiment Value')
-    plt.title('Sentiment over Time')
+    plt.title(f'{semantic} over Time')
     plt.legend()
     plt.grid(True)
 
     plt.tight_layout()
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-    filename = f"{timestamp}_sentiments.png"
+    filename = f"{timestamp}_{semantic_number}.png"
     plt.savefig(filename)
     plt.close()
     print(f"Saved plot as {filename}")

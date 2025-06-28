@@ -29,14 +29,17 @@ def main():
     logger.info(f"Loading dataset from: {path_data}")
     dataset = DNDDataset(path_data)
 
-    classification_statement = "Classify sentiment [positive, negative, neutral]: "
+    semantics = ["Classify sentiment [positive, negative, neutral]: ",
+                 "Classify sentiment about Goratur [positive, negative, neutral]: "]
 
-    sentiments = []
-    for i in range(0, len(dataset), 1):
-        chunk = dataset[i]
-        query = classification_statement + chunk
-        c = model.classify(query)
-        sentiments.append(c)
+    results = {}
+    for semantic in semantics:
+        results[semantic] = []
+        for i in range(0, len(dataset), 5):
+            chunk = dataset[i]
+            query = semantic + chunk
+            c = model.classify(query)
+            results[semantic].append(c)
 
     # Decode and print
     print("Time taken (s): ", time.time() - start_time)
@@ -47,7 +50,8 @@ def main():
         chunks = [dataset[i] for i in range(len(dataset))]
         stats = compute_chunk_stats(chunks)
         plot_stats(stats)
-        plot_sentiment(sentiments)
+        for i, semantic in enumerate(semantics):
+            plot_sentiment(results[semantic], semantic, i)
 
 if __name__ == "__main__":
     main()
