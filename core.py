@@ -68,19 +68,20 @@ class DNDDataset(Dataset):
         for filepath in filepaths:
             try:
                 with open(filepath, "r", encoding="utf-8") as f:
-                    logger.info(f"Reading file: {filepath}")
                     for line in f:
                         buffer_text += line.strip() + " "
                         words = buffer_text.split()
-
-                        # Form full chunks of max_length words
                         while len(words) >= self.max_length:
-                            chunk = " ".join(words[:self.max_length])
+                            chunk = " ".join(words[:self.max_length]).lower()
                             self.chunks.append(chunk)
                             words = words[self.stride:]
                             buffer_text = " ".join(words)
-            except FileNotFoundError:
-                logger.warning(f"File not found: {filepath}")
+                            # Form full chunks of max_length words
+                            while len(words) >= self.max_length:
+                                chunk = " ".join(words[:self.max_length])
+                                self.chunks.append(chunk)
+                                words = words[self.stride:]
+                                buffer_text = " ".join(words)
             except Exception as e:
                 logger.error(f"Failed to process {filepath}: {e}")
 

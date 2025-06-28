@@ -1,7 +1,7 @@
 import time
 import logging
 from core import SentimentClassifier, DNDDataset
-from viz import compute_chunk_stats, plot_stats, plot_sentiment
+from viz import compute_chunk_stats, plot_stats, plot_sentiment, plot_heatmap
 
 # Configure logging
 logging.basicConfig(level=logging.INFO)
@@ -33,18 +33,18 @@ def main():
                  'negative': "Goratur was such a pedo.",
                  'neural': "John you did a great job!"}
 
-    semantics = ["Classify sentiment [positive, negative, neutral]: ",
-                 "Classify sentiment about Goratur [positive, negative, neutral]: ",
-                 f"Classify sentiment about Goratur using these few-shot examples \n {[v + ': sentiment is ' + k for k, v in few_shots.items()]} [positive, negative, neutral]: "]
+    semantics = {'Overall Sentiment': "Classify sentiment [positive, negative, neutral]: ",
+                 'Goratur Sentiment (Zero-Shot)': "Classify sentiment about Goratur [positive, negative, neutral]: ",
+                 'Gortaur Sentiment (Few-Shot)': f"Classify sentiment about Goratur using these few-shot examples \n {[v + ': sentiment is ' + k for k, v in few_shots.items()]} [positive, negative, neutral]: "}
 
     results = {}
-    for semantic in semantics:
-        results[semantic] = []
+    for name, semantic in semantics.items():
+        results[name] = []
         for i in range(0, len(dataset), 5):
             chunk = dataset[i]
             query = semantic + chunk
             c = model.classify(query)
-            results[semantic].append(c)
+            results[name].append(c)
 
     # Decode and print
     print("Time taken (s): ", time.time() - start_time)
@@ -55,8 +55,8 @@ def main():
         chunks = [dataset[i] for i in range(len(dataset))]
         stats = compute_chunk_stats(chunks)
         plot_stats(stats)
-        for i, semantic in enumerate(semantics):
-            plot_sentiment(results[semantic], semantic, i)
+        plot_heatmap(chunks)
+        plot_sentiment(results)
 
 if __name__ == "__main__":
     main()
