@@ -1,6 +1,9 @@
 from core import SentimentClassifier, DNDDataset
+import time
 
 def main():
+
+    time_start = time.time()
 
     path_model = 'models'
     path_data = 'data/notes.txt'
@@ -18,6 +21,7 @@ def main():
 
     # Decode and print
     print("Output:", c)
+    print("Time taken (s): ", time.time() - time_start)
 
 if __name__ == "__main__":
     main()
