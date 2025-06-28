@@ -8,7 +8,7 @@ def main():
     time_start = time.time()
 
     path_model = 'models'
-    path_data = 'data/notes.txt'
+    path_data = ['data/old_notes.txt', 'data/notes.txt']
 
     # Get the pre-trained model
     model = SentimentClassifier(path_model)

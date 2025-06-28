@@ -17,27 +17,29 @@ class SentimentClassifier:
             outputs = self.model.generate(**inputs, max_new_tokens=max_tokens)
         return self.tokenizer.decode(outputs[0], skip_special_tokens=True)
 
-from torch.utils.data import Dataset
-
 class DNDDataset(Dataset):
-    def __init__(self, filepath, max_length=100, stride=None):
+    def __init__(self, filepaths, max_length=100, stride=None):
+        if isinstance(filepaths, str):
+            filepaths = [filepaths]  # allow single string input
+
         self.max_length = max_length
         self.stride = stride or max_length
         self.chunks = []
 
         buffer_text = ""
 
-        with open(filepath, "r", encoding="utf-8") as f:
-            for line in f:
-                buffer_text += line.strip() + " "
-                words = buffer_text.split()
-                while len(words) >= self.max_length:
-                    chunk = " ".join(words[:self.max_length])
-                    self.chunks.append(chunk)
-                    words = words[self.stride:]
-                    buffer_text = " ".join(words)
+        for filepath in filepaths:
+            with open(filepath, "r", encoding="utf-8") as f:
+                for line in f:
+                    buffer_text += line.strip() + " "
+                    words = buffer_text.split()
+                    while len(words) >= self.max_length:
+                        chunk = " ".join(words[:self.max_length])
+                        self.chunks.append(chunk)
+                        words = words[self.stride:]
+                        buffer_text = " ".join(words)
 
-        # Add remaining text
+        # Add any remaining text as last chunk
         if buffer_text.strip():
             self.chunks.append(buffer_text.strip())
 
