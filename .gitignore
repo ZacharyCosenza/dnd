@@ -27,6 +27,7 @@ model.safetensors
 *.db
 *.png
 !fig1.png
+!fig2.png
 
 # OS-specific
 .DS_Store
