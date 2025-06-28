@@ -1,6 +1,3 @@
-# Customized things to ignore
-model.safetensors
-
 # Byte-compiled / cache files
 __pycache__/
 *.py[cod]
@@ -20,6 +17,7 @@ ENV/
 *.pt
 *.pth
 *.h5
+model.safetensors
 
 # Data files
 *.csv
@@ -27,6 +25,8 @@ ENV/
 *.log
 *.sqlite3
 *.db
+*.png
+!fig1.png
 
 # OS-specific
 .DS_Store

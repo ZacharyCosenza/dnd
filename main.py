@@ -1,6 +1,9 @@
 from core import SentimentClassifier, DNDDataset
+from viz import compute_chunk_stats, plot_stats
 
 def main():
+
+    viz = True
 
     path_model = 'models'
     path_data = 'data/notes.txt'
@@ -18,6 +21,14 @@ def main():
 
     # Decode and print
     print("Output:", c)
+
+    # Visualizations
+    if viz:
+        # Assuming `dataset` is your DNDDataset instance returning text chunks
+        chunks = [dataset[i] for i in range(len(dataset))]
+        stats = compute_chunk_stats(chunks)
+        plot_stats(stats)
+
 
 if __name__ == "__main__":
     main()
