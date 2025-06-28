@@ -1,7 +1,7 @@
 import time
 import logging
 from core import SentimentClassifier, DNDDataset
-from viz import compute_chunk_stats, plot_stats
+from viz import compute_chunk_stats, plot_stats, plot_sentiment
 
 # Configure logging
 logging.basicConfig(level=logging.INFO)
@@ -29,16 +29,17 @@ def main():
     logger.info(f"Loading dataset from: {path_data}")
     dataset = DNDDataset(path_data)
 
-    # Construct a single input prompt from the first chunk
-    query = f"Classify sentiment: {dataset[0]}"
-    logger.info(f"Classifying sentiment for first chunk...")
+    classification_statement = "Classify sentiment [positive, negative, neutral]: "
 
-    # Run classification
-    classification = model.classify(query)
+    sentiments = []
+    for i in range(0, len(dataset), 1):
+        chunk = dataset[i]
+        query = classification_statement + chunk
+        c = model.classify(query)
+        sentiments.append(c)
 
-    # Output result
-    logger.info(f"Output: {classification}")
-    logger.info(f"Time taken (s): {time.time() - start_time:.2f}")
+    # Decode and print
+    print("Time taken (s): ", time.time() - start_time)
 
     # Optionally compute and plot stats
     if enable_viz:
@@ -46,6 +47,7 @@ def main():
         chunks = [dataset[i] for i in range(len(dataset))]
         stats = compute_chunk_stats(chunks)
         plot_stats(stats)
+        plot_sentiment(sentiments)
 
 if __name__ == "__main__":
     main()

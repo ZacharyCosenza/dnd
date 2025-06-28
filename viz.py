@@ -111,4 +111,44 @@ def plot_stats(stats: Dict[str, List[float]], window: int = 15) -> None:
     filename = f"{timestamp}_metrics.png"
     plt.savefig(filename)
     plt.close()
+<<<<<<< HEAD
     logger.info(f"Saved plot as {filename}")
+=======
+    print(f"Saved plot as {filename}")
+
+import numpy as np
+import matplotlib.pyplot as plt
+from datetime import datetime
+
+def plot_sentiment(sentiments):
+
+    # Map sentiment to numeric values
+    mapping = {'positive': 1, 'negative': -1, 'neutral': 0}
+    values = np.array([mapping[s] for s in sentiments])
+
+    # Running average (window size 3)
+    def running_average(arr, w=3):
+        return np.convolve(arr, np.ones(w)/w, mode='valid')
+
+    avg = running_average(values)
+
+    # Cumulative average
+    cumavg = np.cumsum(values) / (np.arange(len(values)) + 1)
+
+    plt.figure(figsize=(10, 3))
+    plt.plot(range(len(avg)), avg, color='blue', linewidth=2, label='Running Average')
+    plt.plot(range(len(cumavg)), cumavg, color='orange', linewidth=2, label='Cumulative Average')
+
+    plt.xlabel('Time')
+    plt.ylabel('Sentiment Value')
+    plt.title('Sentiment over Time')
+    plt.legend()
+    plt.grid(True)
+
+    plt.tight_layout()
+    timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+    filename = f"{timestamp}_sentiments.png"
+    plt.savefig(filename)
+    plt.close()
+    print(f"Saved plot as {filename}")
+>>>>>>> 35c05f2 (added sentiment tracker)
