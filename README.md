@@ -13,3 +13,8 @@ This is a basic exploration of recent DND notes.
 1. Clone the repo  
 2. Install dependencies  
 3. `python main.py`
+
+## Rules
+
+1. Don't work on `main` branch unless small updates
+2. Heavy work should be on `dev` branch.
