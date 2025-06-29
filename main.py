@@ -46,7 +46,7 @@ def main():
     results = {}
     for name, semantic in semantics.items():
         results[name] = []
-        for i in range(0, len(dataset), 5):
+        for i in range(0, len(dataset), 100):
             chunk = dataset[i]
             query = semantic + chunk
             c = model.classify(query)
