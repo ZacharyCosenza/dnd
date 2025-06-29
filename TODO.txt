@@ -1,5 +1,4 @@
 General Notes:
 - need to add requirements.txt
 - need to clean up model downloads
-- need to add fine tuning on examples
 - need to add ability to call models from url
