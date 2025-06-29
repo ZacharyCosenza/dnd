@@ -33,9 +33,15 @@ def main():
                  'negative': "Goratur was such a pedo.",
                  'neural': "John you did a great job!"}
 
-    semantics = {'Overall Sentiment': "Classify sentiment [positive, negative, neutral]: ",
-                 'Goratur Sentiment (Zero-Shot)': "Classify sentiment about Goratur [positive, negative, neutral]: ",
-                 'Gortaur Sentiment (Few-Shot)': f"Classify sentiment about Goratur using these few-shot examples \n {[v + ': sentiment is ' + k for k, v in few_shots.items()]} [positive, negative, neutral]: "}
+    few_shots_2 = {'positive': "Jill you did a great job!",
+                 'negative': "Jack was such a pedo.",
+                 'neural': "John walked to the bridge."}
+
+    semantics = {
+                # 'Overall Sentiment': "Classify sentiment [positive, negative, neutral]: ",
+                #  'Goratur Sentiment (Zero-Shot)': "Classify sentiment about Goratur [positive, negative, neutral]: ",
+                 'Gortaur Sentiment (Few-Shot)': f"Classify sentiment about Goratur using these few-shot examples \n {[v + ': sentiment is ' + k for k, v in few_shots.items()]} [positive, negative, neutral]: ",
+                 'Overall Sentiment': f"Classify sentiment using these few-shot examples \n {[v + ': sentiment is ' + k for k, v in few_shots_2.items()]} [positive, negative, neutral]: "}
 
     results = {}
     for name, semantic in semantics.items():
